@@ -136,11 +136,11 @@ namespace BikeTraining
 
         public string TweetBestWorkoutOfWeek()
         {
-            var (workout, calories) = GetWeeksBestWorkout();
+            var best = GetWeeksBestWorkout();
 
-            if (calories > GoodCalorieBurn)
+            if (best.Item2 > GoodCalorieBurn)
             {
-                return Tweetify(workout.Notes);
+                return Tweetify(best.Item1.Notes);
             }
             return Tweetify("Casual workout week...");
         }
@@ -155,27 +155,19 @@ namespace BikeTraining
 
             var bike = todaysWorkout as BikeWorkouts;
             if (bike != null)
-            {
                 return Tweetify($"I biked {bike.Distance:0.0} miles @ {bike.Pace:0.0} mph ({bike.Type}). {bike.Notes}");
-            }
 
             var dist = todaysWorkout as DistanceWorkout;
             if (dist != null)
-            {
                 return Tweetify($"I ran {dist.Distance:0.0} miles @ {dist.Pace:0.0} mph. {dist.Notes}");
-            }
 
             var other = todaysWorkout as Workout;
             if (other != null)
-            {
                 return todaysWorkout.Notes.Length == TweetSize
                 ? todaysWorkout.Notes
                 : Tweetify(todaysWorkout.Notes);
-            }
             else
-            {
                 return "*cricket* *cricket*";
-            }
 
             return todaysWorkout.Notes.Length == TweetSize
                 ? todaysWorkout.Notes
@@ -194,8 +186,8 @@ namespace BikeTraining
 
             return sb.ToString();
 =======
-                        else
-                            return msg + GetHashTags(TweetSize - msg.Length);
+            else
+                return msg + GetHashTags(TweetSize - msg.Length);
 >>>>>>> upsteam
 
         }

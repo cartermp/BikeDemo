@@ -70,7 +70,13 @@ namespace BikeTraining
         public int Age { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
-        public double BasalMetabolicRate { get => GetBasalMetabolicRate(); }
+        public double BasalMetabolicRate
+        {
+            get
+            {
+                return GetBasalMetabolicRate();
+            }
+        }
         public List<Workout> Workouts { get; set; }
 
         public Athlete(string username, Gender gender, int age, double weight, double height)

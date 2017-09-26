@@ -11,17 +11,17 @@ namespace BikeTrainingTests
     {
         public Athlete CreateFemaleAthleteNoWorkout()
         {
-            return new Athlete("kaseyu", Gender.Female, 25, 155, 71);
+            return new Athlete("kasey", Gender.Female, 25, 155.0, 71.0);
         }
 
         public Athlete CreateMaleAthleteNoWorkout()
         {
-            return new Athlete("eweber", Gender.Male, 27, 201, 72);
+            return new Athlete("scott", Gender.Male, 40, 180.0, 72.0);
         }
 
         public Athlete CreateFemaleAthleteWithWorkouts()
         {
-            var athlete = new Athlete("kaseyu", Gender.Female, 25, 155, 71);
+            var athlete = new Athlete("kasey", Gender.Female, 25, 155.0, 71.0);
             var w = new BikeWorkouts(WorkoutType.Outdoor, 8.21, DateTime.Now, TimeSpan.FromMinutes(67), 106, "Test drove the new bike around Greenlake!");
             var w2 = new Workout(DateTime.Now.AddDays(-2), new TimeSpan(0, 14, 3), 124, "Single leg squats FTW!");
             athlete.AddWorkout(w, w2);
@@ -30,7 +30,7 @@ namespace BikeTrainingTests
 
         public Athlete CreateMaleAthleteWithWorkouts()
         {
-            var athlete = new Athlete("eweber", Gender.Male, 27, 201, 72);
+            var athlete = new Athlete("scott", Gender.Male, 40, 201.0, 72.0);
             var w = new BikeWorkouts(WorkoutType.Outdoor, 8.21, DateTime.Now, TimeSpan.FromMinutes(67), 113, "Learning how to bike in the streets :O");
             var w2 = new Workout(DateTime.Now.AddDays(-4), new TimeSpan(1, 2, 43), 132, "500 lb squat day. #gainz");
             athlete.AddWorkout(w, w2);

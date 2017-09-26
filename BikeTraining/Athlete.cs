@@ -209,4 +209,14 @@ namespace BikeTraining
             return true;
         }
     }
+
+    public class TwitterHandle
+    {
+        public string Handle { get; set; }
+
+        public TwitterHandle(string handle)
+        {
+            Handle = handle;
+        }
+    }
 }

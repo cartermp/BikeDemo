@@ -211,4 +211,15 @@ namespace BikeTraining
             return true;
         }
     }
+
+    public class Authentication
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public Authentication(string username, string password)
+        {
+            Username = username;
+            Password = password;
+        }
+    }
 }

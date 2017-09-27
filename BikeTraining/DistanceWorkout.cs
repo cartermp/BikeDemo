@@ -13,4 +13,10 @@ namespace BikeTraining
             Pace = distance / duration.TotalHours;
         }
     }
+
+
+    enum HairStyle
+    {
+        HighPonytail, LowPonytail, Bun, Braid, Loose
+    }
 }

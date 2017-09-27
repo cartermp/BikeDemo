@@ -126,7 +126,7 @@ namespace BikeTrainingTests
         {
             var athlete = CreateMaleAthleteNoWorkout();
             var actual = athlete.BasalMetabolicRate;
-            var expected = 66.47 + (13.75 * 201 * 0.453592) + (5.003 * 72 * 2.54) - (6.755 * 27);
+            var expected = 66.47 + (13.75 * 180 * 0.453592) + (5.003 * 72 * 2.54) - (6.755 * 40);
             Assert.AreEqual(expected, actual, .00001);
         }
 

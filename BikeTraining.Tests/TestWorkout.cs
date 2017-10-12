@@ -32,7 +32,7 @@ namespace BikeTrainingTests
 
         private Workout CreateBikeWorkout()
         {
-            return new BikeWorkouts(WorkoutType.Outdoor, 21.6, DateTime.Now.AddDays(-5), TimeSpan.FromMinutes(83), 117, "Biking to Red Hook Brewery on the Burke-Gilman. What a day to be alive!");
+            return new BikeWorkout(WorkoutType.Outdoor, 21.6, DateTime.Now.AddDays(-5), TimeSpan.FromMinutes(83), 117, "Biking to Red Hook Brewery on the Burke-Gilman. What a day to be alive!");
         }
 
         private Workout CreateDistanceWorkout()
@@ -49,7 +49,7 @@ namespace BikeTrainingTests
         public void TestBikeWorkoutPace()
         {
             Create("bike");
-            var bike = (BikeWorkouts)_workout;
+            var bike = (BikeWorkout)_workout;
             Assert.AreEqual(15.6144578, bike.Pace, .000001);
         }
 
@@ -57,7 +57,7 @@ namespace BikeTrainingTests
         public void TestBikeWorkoutNotes()
         {
             Create("bike");
-            var bike = (BikeWorkouts)_workout;
+            var bike = (BikeWorkout)_workout;
             Assert.AreEqual(71, bike.Notes.Length);
         }
 
@@ -65,7 +65,7 @@ namespace BikeTrainingTests
         public void TestBikeWorkoutHeartRate()
         {
             Create("bike");
-            var bike = (BikeWorkouts)_workout;
+            var bike = (BikeWorkout)_workout;
             Assert.AreEqual(117, bike.AverageHeartRate);
         }
 

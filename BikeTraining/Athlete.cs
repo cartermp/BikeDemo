@@ -70,13 +70,7 @@ namespace BikeTraining
         public int Age { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
-        public double BasalMetabolicRate
-        {
-            get
-            {
-                return GetBasalMetabolicRate();
-            }
-        }
+        public double BasalMetabolicRate => GetBasalMetabolicRate();
         public List<Workout> Workouts { get; set; }
 
         public Athlete(string username, Gender gender, int age, double weight, double height)
@@ -159,7 +153,7 @@ namespace BikeTraining
             Workout todaysWorkout = Workouts.Where(w => w.Date.Date == today).FirstOrDefault();
             if (todaysWorkout == null) return null;
 
-            var bike = todaysWorkout as BikeWorkouts;
+            var bike = todaysWorkout as BikeWorkout;
             if (bike != null)
                 return Tweetify($"I biked {bike.Distance:0.0} miles @ {bike.Pace:0.0} mph ({bike.Type}). {bike.Notes}");
 
@@ -184,17 +178,17 @@ namespace BikeTraining
         {
             if (msg.Length >= TweetSize) return msg.Substring(0, TweetSize - 3) + "...";
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
             var sb = new StringBuilder(msg);
             var random = new Random();
 
             while (TryAddHashTag(sb, random)) { }
 
             return sb.ToString();
-=======
-            else
-                return msg + GetHashTags(TweetSize - msg.Length);
->>>>>>> upsteam
+//=======
+//            else
+//                return msg + GetHashTags(TweetSize - msg.Length);
+//>>>>>>> upsteam
 
         }
 

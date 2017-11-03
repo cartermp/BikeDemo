@@ -54,6 +54,13 @@ namespace BikeTrainingTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestTweetifyNullMessage()
+        {
+            new Athlete("nulltest", Gender.Female, 30, 120.5, 72.0).Tweetify(null);
+        }
+
+        [TestMethod]
         public void TestAthleteTweetTodayMessage()
         {
             var athlete = CreateFemaleAthleteWithWorkouts();

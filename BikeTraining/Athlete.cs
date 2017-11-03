@@ -174,7 +174,7 @@ namespace BikeTraining
                 : Tweetify(todaysWorkout.Notes);
         }
 
-        private string Tweetify(string msg)
+        public string Tweetify(string msg)
         {
             if (msg.Length >= TweetSize) return msg.Substring(0, TweetSize - 3) + "...";
 
@@ -184,7 +184,6 @@ namespace BikeTraining
             while (TryAddHashTag(sb, random)) { }
 
             return sb.ToString();
-
         }
 
         private bool TryAddHashTag(StringBuilder sb, Random random)

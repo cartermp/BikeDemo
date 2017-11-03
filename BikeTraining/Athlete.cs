@@ -178,17 +178,12 @@ namespace BikeTraining
         {
             if (msg.Length >= TweetSize) return msg.Substring(0, TweetSize - 3) + "...";
 
-<<<<<<< HEAD
             var sb = new StringBuilder(msg);
             var random = new Random();
 
             while (TryAddHashTag(sb, random)) { }
 
             return sb.ToString();
-=======
-            else
-                return msg + GetHashTags(TweetSize - msg.Length);
->>>>>>> upsteam
 
         }
 
